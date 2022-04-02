@@ -19,6 +19,7 @@
 		C6EA062B27F8C60B00AD1440 /* PostDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EA062A27F8C60B00AD1440 /* PostDetailScreen.swift */; };
 		C6EA062D27F8C62100AD1440 /* PostCommentsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EA062C27F8C62100AD1440 /* PostCommentsScreen.swift */; };
 		C6EA063027F8C9FB00AD1440 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EA062F27F8C9FB00AD1440 /* Presenter.swift */; };
+		C6EA063327F8F9B900AD1440 /* UserCommentsAPI in Frameworks */ = {isa = PBXBuildFile; productRef = C6EA063227F8F9B900AD1440 /* UserCommentsAPI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6EA063327F8F9B900AD1440 /* UserCommentsAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +56,7 @@
 			children = (
 				C6EA060727F8BF9F00AD1440 /* UserCommentsApp */,
 				C6EA060627F8BF9F00AD1440 /* Products */,
+				C6EA063127F8F9B900AD1440 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +104,13 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		C6EA063127F8F9B900AD1440 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -117,6 +127,9 @@
 			dependencies = (
 			);
 			name = UserCommentsApp;
+			packageProductDependencies = (
+				C6EA063227F8F9B900AD1440 /* UserCommentsAPI */,
+			);
 			productName = UserCommentsApp;
 			productReference = C6EA060527F8BF9F00AD1440 /* UserCommentsApp.app */;
 			productType = "com.apple.product-type.application";
@@ -400,6 +413,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C6EA063227F8F9B900AD1440 /* UserCommentsAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UserCommentsAPI;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C6EA061127F8BF9F00AD1440 /* UserCommentsApp.xcdatamodeld */ = {
