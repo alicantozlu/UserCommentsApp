@@ -6,22 +6,25 @@
 //
 
 import UIKit
+import UserCommentsAPI
 
 class UserScreen: UIViewController {
 
+    var userListData = [User]()
+    let service = UserListService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        service.fetchUserList(url: "https://jsonplaceholder.typicode.com/users") { (response: Result<[User], Error>) -> Void in
+            
+            switch response{
+            case .success(let data):
+                self.userListData = data
+                print(data)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
