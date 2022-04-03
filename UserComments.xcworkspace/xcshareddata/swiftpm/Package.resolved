@@ -9,6 +9,24 @@
           "revision": "f82c23a8a7ef8dc1a49a8bfc6a96883e79121864",
           "version": "5.5.0"
         }
+      },
+      {
+        "package": "CollectionViewRegister",
+        "repositoryURL": "https://github.com/alicantozlu/CollectionViewRegister",
+        "state": {
+          "branch": "main",
+          "revision": "8757dcd62025e808f1a072db2f48684d16599795",
+          "version": null
+        }
+      },
+      {
+        "package": "SwiftHelperFunctions",
+        "repositoryURL": "https://github.com/alicantozlu/SwiftHelperFunctions",
+        "state": {
+          "branch": "main",
+          "revision": "99f1c2aa9109d4cce60c2f9e0fb5ebd630528f7e",
+          "version": null
+        }
       }
     ]
   },
