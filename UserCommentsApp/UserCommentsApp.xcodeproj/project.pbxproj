@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6B9542327F9C29B0008E446 /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B9542227F9C29B0008E446 /* UICollectionViewCell+Extension.swift */; };
+		C6B9542527F9C6150008E446 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B9542427F9C6150008E446 /* UICollectionView+Extension.swift */; };
 		C6EA060927F8BF9F00AD1440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EA060827F8BF9F00AD1440 /* AppDelegate.swift */; };
 		C6EA060B27F8BF9F00AD1440 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EA060A27F8BF9F00AD1440 /* SceneDelegate.swift */; };
 		C6EA060D27F8BF9F00AD1440 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EA060C27F8BF9F00AD1440 /* SplashScreen.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C6B9542227F9C29B0008E446 /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
+		C6B9542427F9C6150008E446 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		C6EA060527F8BF9F00AD1440 /* UserCommentsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserCommentsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6EA060827F8BF9F00AD1440 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6EA060A27F8BF9F00AD1440 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +55,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C6B9541F27F9C2450008E446 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		C6B9542027F9C2510008E446 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C6B9542227F9C29B0008E446 /* UICollectionViewCell+Extension.swift */,
+				C6B9542427F9C6150008E446 /* UICollectionView+Extension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		C6B9542127F9C2730008E446 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		C6EA05FC27F8BF9F00AD1440 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +98,9 @@
 		C6EA060727F8BF9F00AD1440 /* UserCommentsApp */ = {
 			isa = PBXGroup;
 			children = (
+				C6B9542127F9C2730008E446 /* Utils */,
+				C6B9542027F9C2510008E446 /* Extensions */,
+				C6B9541F27F9C2450008E446 /* Cells */,
 				C6EA062E27F8C9C800AD1440 /* Helpers */,
 				C6EA062327F8C59F00AD1440 /* Controllers */,
 				C6EA060827F8BF9F00AD1440 /* AppDelegate.swift */,
@@ -186,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6EA060D27F8BF9F00AD1440 /* SplashScreen.swift in Sources */,
+				C6B9542527F9C6150008E446 /* UICollectionView+Extension.swift in Sources */,
 				C6EA062727F8C5D900AD1440 /* UserScreen.swift in Sources */,
 				C6EA060927F8BF9F00AD1440 /* AppDelegate.swift in Sources */,
 				C6EA061327F8BF9F00AD1440 /* UserCommentsApp.xcdatamodeld in Sources */,
@@ -193,6 +224,7 @@
 				C6EA062B27F8C60B00AD1440 /* PostDetailScreen.swift in Sources */,
 				C6EA060B27F8BF9F00AD1440 /* SceneDelegate.swift in Sources */,
 				C6EA063027F8C9FB00AD1440 /* Presenter.swift in Sources */,
+				C6B9542327F9C29B0008E446 /* UICollectionViewCell+Extension.swift in Sources */,
 				C6EA062D27F8C62100AD1440 /* PostCommentsScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
