@@ -13,14 +13,13 @@ import Alamofire
  case canNotProcessData
  }*/
 
-public protocol UserDataProtocol{
+public protocol UserDataProtocol where Self: AnyObject{
     func fetchUserData<T: Decodable>(url:String ,completion: @escaping (Result<[T], Error>) -> Void)
 }
 
 public class UserDataService: UserDataProtocol{
     public init() {}
     
-    //T yerine geriye dondurulmesi istenilen bilgilerin dizi modeli gonderilecek
     public func fetchUserData<T: Decodable>(url:String ,completion: @escaping (Result<T, Error>) -> Void) {
         AF.request(url).responseData { response in
             switch response.result{
