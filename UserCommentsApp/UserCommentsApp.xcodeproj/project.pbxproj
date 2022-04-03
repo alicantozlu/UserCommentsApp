@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C6B9542327F9C29B0008E446 /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B9542227F9C29B0008E446 /* UICollectionViewCell+Extension.swift */; };
-		C6B9542527F9C6150008E446 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B9542427F9C6150008E446 /* UICollectionView+Extension.swift */; };
+		C6B9542827F9CD5A0008E446 /* CollectionViewRegister in Frameworks */ = {isa = PBXBuildFile; productRef = C6B9542727F9CD5A0008E446 /* CollectionViewRegister */; };
+		C6B9542B27F9CF300008E446 /* SwiftHelperFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = C6B9542A27F9CF300008E446 /* SwiftHelperFunctions */; };
 		C6EA060927F8BF9F00AD1440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EA060827F8BF9F00AD1440 /* AppDelegate.swift */; };
 		C6EA060B27F8BF9F00AD1440 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EA060A27F8BF9F00AD1440 /* SceneDelegate.swift */; };
 		C6EA060D27F8BF9F00AD1440 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EA060C27F8BF9F00AD1440 /* SplashScreen.swift */; };
@@ -20,13 +20,10 @@
 		C6EA062927F8C5F500AD1440 /* UserPostsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EA062827F8C5F500AD1440 /* UserPostsScreen.swift */; };
 		C6EA062B27F8C60B00AD1440 /* PostDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EA062A27F8C60B00AD1440 /* PostDetailScreen.swift */; };
 		C6EA062D27F8C62100AD1440 /* PostCommentsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EA062C27F8C62100AD1440 /* PostCommentsScreen.swift */; };
-		C6EA063027F8C9FB00AD1440 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EA062F27F8C9FB00AD1440 /* Presenter.swift */; };
 		C6EA063327F8F9B900AD1440 /* UserCommentsAPI in Frameworks */ = {isa = PBXBuildFile; productRef = C6EA063227F8F9B900AD1440 /* UserCommentsAPI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C6B9542227F9C29B0008E446 /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
-		C6B9542427F9C6150008E446 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		C6EA060527F8BF9F00AD1440 /* UserCommentsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserCommentsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6EA060827F8BF9F00AD1440 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6EA060A27F8BF9F00AD1440 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,7 +37,6 @@
 		C6EA062827F8C5F500AD1440 /* UserPostsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsScreen.swift; sourceTree = "<group>"; };
 		C6EA062A27F8C60B00AD1440 /* PostDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailScreen.swift; sourceTree = "<group>"; };
 		C6EA062C27F8C62100AD1440 /* PostCommentsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentsScreen.swift; sourceTree = "<group>"; };
-		C6EA062F27F8C9FB00AD1440 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +44,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6B9542827F9CD5A0008E446 /* CollectionViewRegister in Frameworks */,
 				C6EA063327F8F9B900AD1440 /* UserCommentsAPI in Frameworks */,
+				C6B9542B27F9CF300008E446 /* SwiftHelperFunctions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,15 +58,6 @@
 			children = (
 			);
 			name = Cells;
-			sourceTree = "<group>";
-		};
-		C6B9542027F9C2510008E446 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				C6B9542227F9C29B0008E446 /* UICollectionViewCell+Extension.swift */,
-				C6B9542427F9C6150008E446 /* UICollectionView+Extension.swift */,
-			);
-			name = Extensions;
 			sourceTree = "<group>";
 		};
 		C6B9542127F9C2730008E446 /* Utils */ = {
@@ -99,9 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				C6B9542127F9C2730008E446 /* Utils */,
-				C6B9542027F9C2510008E446 /* Extensions */,
 				C6B9541F27F9C2450008E446 /* Cells */,
-				C6EA062E27F8C9C800AD1440 /* Helpers */,
 				C6EA062327F8C59F00AD1440 /* Controllers */,
 				C6EA060827F8BF9F00AD1440 /* AppDelegate.swift */,
 				C6EA060A27F8BF9F00AD1440 /* SceneDelegate.swift */,
@@ -124,14 +111,6 @@
 				C6EA062C27F8C62100AD1440 /* PostCommentsScreen.swift */,
 			);
 			name = Controllers;
-			sourceTree = "<group>";
-		};
-		C6EA062E27F8C9C800AD1440 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				C6EA062F27F8C9FB00AD1440 /* Presenter.swift */,
-			);
-			name = Helpers;
 			sourceTree = "<group>";
 		};
 		C6EA063127F8F9B900AD1440 /* Frameworks */ = {
@@ -159,6 +138,8 @@
 			name = UserCommentsApp;
 			packageProductDependencies = (
 				C6EA063227F8F9B900AD1440 /* UserCommentsAPI */,
+				C6B9542727F9CD5A0008E446 /* CollectionViewRegister */,
+				C6B9542A27F9CF300008E446 /* SwiftHelperFunctions */,
 			);
 			productName = UserCommentsApp;
 			productReference = C6EA060527F8BF9F00AD1440 /* UserCommentsApp.app */;
@@ -188,6 +169,10 @@
 				Base,
 			);
 			mainGroup = C6EA05FC27F8BF9F00AD1440;
+			packageReferences = (
+				C6B9542627F9CD5A0008E446 /* XCRemoteSwiftPackageReference "CollectionViewRegister" */,
+				C6B9542927F9CF300008E446 /* XCRemoteSwiftPackageReference "SwiftHelperFunctions" */,
+			);
 			productRefGroup = C6EA060627F8BF9F00AD1440 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -216,15 +201,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6EA060D27F8BF9F00AD1440 /* SplashScreen.swift in Sources */,
-				C6B9542527F9C6150008E446 /* UICollectionView+Extension.swift in Sources */,
 				C6EA062727F8C5D900AD1440 /* UserScreen.swift in Sources */,
 				C6EA060927F8BF9F00AD1440 /* AppDelegate.swift in Sources */,
 				C6EA061327F8BF9F00AD1440 /* UserCommentsApp.xcdatamodeld in Sources */,
 				C6EA062927F8C5F500AD1440 /* UserPostsScreen.swift in Sources */,
 				C6EA062B27F8C60B00AD1440 /* PostDetailScreen.swift in Sources */,
 				C6EA060B27F8BF9F00AD1440 /* SceneDelegate.swift in Sources */,
-				C6EA063027F8C9FB00AD1440 /* Presenter.swift in Sources */,
-				C6B9542327F9C29B0008E446 /* UICollectionViewCell+Extension.swift in Sources */,
 				C6EA062D27F8C62100AD1440 /* PostCommentsScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,7 +428,36 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		C6B9542627F9CD5A0008E446 /* XCRemoteSwiftPackageReference "CollectionViewRegister" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alicantozlu/CollectionViewRegister";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		C6B9542927F9CF300008E446 /* XCRemoteSwiftPackageReference "SwiftHelperFunctions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alicantozlu/SwiftHelperFunctions";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		C6B9542727F9CD5A0008E446 /* CollectionViewRegister */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6B9542627F9CD5A0008E446 /* XCRemoteSwiftPackageReference "CollectionViewRegister" */;
+			productName = CollectionViewRegister;
+		};
+		C6B9542A27F9CF300008E446 /* SwiftHelperFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6B9542927F9CF300008E446 /* XCRemoteSwiftPackageReference "SwiftHelperFunctions" */;
+			productName = SwiftHelperFunctions;
+		};
 		C6EA063227F8F9B900AD1440 /* UserCommentsAPI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UserCommentsAPI;
