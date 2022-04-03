@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  UserDataService.swift
 //  
 //
 //  Created by Ali Can Tozlu on 3.04.2022.
@@ -13,17 +13,16 @@ import Alamofire
  case canNotProcessData
  }*/
 
-public protocol UserListProtocol{
-    func fetchUserList<T: Decodable>(url:String ,completion: @escaping (Result<[T], Error>) -> Void)
+public protocol UserDataProtocol{
+    func fetchUserData<T: Decodable>(url:String ,completion: @escaping (Result<[T], Error>) -> Void)
 }
 
-public class UserListService: UserListProtocol{
+public class UserDataService: UserDataProtocol{
     public init() {}
     
     //T yerine geriye dondurulmesi istenilen bilgilerin dizi modeli gonderilecek
-    // public func fetchUserList<T: Decodable>(url:String ,completion: @escaping (Result<[T], UserListError>) -> Void) {
-    public func fetchUserList<T: Decodable>(url:String ,completion: @escaping (Result<[T], Error>) -> Void) {
-        AF.request(url).responseData { [weak self] response in
+    public func fetchUserData<T: Decodable>(url:String ,completion: @escaping (Result<T, Error>) -> Void) {
+        AF.request(url).responseData { response in
             switch response.result{
             case .success(let data):
                 do{
@@ -31,10 +30,10 @@ public class UserListService: UserListProtocol{
                     let newData = try decoder.decode(T.self, from:data)
                     completion(.success(newData))
                 }catch{
-                    completion(.failure(error.localizedDescription))
+                    completion(.failure(error))
                 }
             case .failure(let error):
-                completion(.failure(error.localizedDescription))
+                completion(.failure(error))
             }
         }
     }
