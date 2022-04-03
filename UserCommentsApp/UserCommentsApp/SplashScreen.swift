@@ -9,13 +9,11 @@ import UIKit
 import SwiftHelperFunctions
 
 class SplashScreen: UIViewController {
-
-    let helper = SwiftHelper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.main.asyncAfter(deadline: .now()+1){
-            self.helper.screenPresenter(selfName: self, targetIdentifier: "userScreenIdentifier", presentation: .fullScreen, transition: .flipHorizontal, completionText:("SplashScreen'e Geçildi"))
+            SwiftHelper.helper.screenPresenter(self, "userScreenIdentifier", .fullScreen, .flipHorizontal, ("SplashScreen'e Geçildi"))
         }
     }
 }
