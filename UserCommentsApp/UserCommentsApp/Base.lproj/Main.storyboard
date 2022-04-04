@@ -77,6 +77,9 @@
                             <constraint firstItem="IR9-xx-RBz" firstAttribute="bottom" secondItem="XJG-Nk-ueq" secondAttribute="bottom" id="xxk-Hv-76n"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="userCollectionView" destination="XJG-Nk-ueq" id="aCr-0s-eh2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2UC-B4-cZz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -124,10 +127,13 @@
                             <constraint firstItem="rXV-NW-QPH" firstAttribute="top" secondItem="A01-E4-eDF" secondAttribute="top" id="iyY-Xj-uum"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="postCollectionView" destination="rXV-NW-QPH" id="zQ2-Kr-iKu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTu-c9-iZK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1581" y="117"/>
+            <point key="canvasLocation" x="1588" y="112"/>
         </scene>
         <!--Post Detail Screen-->
         <scene sceneID="hV2-dq-r1Q">
@@ -186,6 +192,9 @@
                             <constraint firstItem="gQD-aZ-TaM" firstAttribute="trailing" secondItem="BqQ-m1-pEO" secondAttribute="trailing" id="zkw-bR-4Vr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="commentCollectionView" destination="BqQ-m1-pEO" id="wtf-r0-DUM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Xa-Q7-V1b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

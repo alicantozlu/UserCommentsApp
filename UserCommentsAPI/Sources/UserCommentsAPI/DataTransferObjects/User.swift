@@ -8,31 +8,31 @@
 import Foundation
 
 public struct User: Decodable{
-    let id: Int?
-    let name: String?
-    let username: String?
-    let email: String?
-    let address: Address?
-    let phone: String?
-    let website: String?
-    let company: Company?
+    public let id: Int?
+    public let name: String?
+    public let username: String?
+    public let email: String?
+    public let address: Address?
+    public let phone: String?
+    public let website: String?
+    public let company: Company?
 }
 
-struct Address: Decodable{
-    let street: String?
-    let suite: String?
-    let city: String?
-    let zipcode: String?
-    let geo: Geo?
+public struct Address: Decodable{
+    public let street: String?
+    public let suite: String?
+    public let city: String?
+    public let zipcode: String?
+    public let geo: Geo?
 }
 
-struct Geo: Decodable{
-    let lat: String?
-    let lng: String?
+public struct Geo: Decodable{
+    public let lat: String?
+    public let lng: String?
 }
 
-struct Company: Decodable{
-    let name: String?
-    let catchPhrase: String?
-    let bs: String?
+public struct Company: Decodable{
+    public let name: String?
+    public let catchPhrase: String?
+    public let bs: String?
 }
