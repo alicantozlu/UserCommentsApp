@@ -6,47 +6,50 @@
 //
 
 import UIKit
-import UserCommentsAPI
 import SwiftHelpers
 
 class UserScreen: UIViewController {
     
     @IBOutlet var userCollectionView: UICollectionView!
-    private var userListData = [User]()
+    
+    var userScreenVM: UserScreenViewModelProtocol!{
+        didSet{
+            userScreenVM.delegate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         userCollectionView.register(cellType: ReusableCollectionViewCell.self)
-        fetchUserList()
+        userScreenVM.fetchData()
     }
 }
 
-extension UserScreen: LoadingShowable{
-    fileprivate func fetchUserList(){
+extension UserScreen: UserScreenViewModelDelegate, LoadingShowable{
+    func showLoadingView() {
         showLoading()
-        UserDataService.service.fetchUserData(url: "https://jsonplaceholder.typicode.com/users") {
-            [weak self] (response: Result<[User], Error>) -> Void in
-            guard let self = self else { return }
-            switch response{
-            case .success(let data):
-                self.userListData = data
-                self.userCollectionView.reloadData()
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
     }
+    
+    func hideLoadingView() {
+        hideLoading()
+    }
+    
+    func reloadData() {
+        userCollectionView.reloadData()
+    }
+    
 }
 
 extension UserScreen: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return userListData.count
+        return userScreenVM.numberOfItems
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellType: ReusableCollectionViewCell.self, indexPath: indexPath)
-        let user = self.userListData[indexPath.row]
-        cell.configUsers(model: user)
+        if let user = userScreenVM.getDataIndex(index: indexPath.row){
+            cell.configUsers(model: user)
+        }
         return cell
     }
 }
