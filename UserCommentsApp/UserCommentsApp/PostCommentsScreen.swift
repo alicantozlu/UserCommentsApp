@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import CollectionViewRegister
 import UserCommentsAPI
+import SwiftHelpers
 
 class PostCommentsScreen: UIViewController {
     

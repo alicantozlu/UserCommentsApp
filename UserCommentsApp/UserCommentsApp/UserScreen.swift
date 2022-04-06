@@ -6,9 +6,8 @@
 //
 
 import UIKit
-import CollectionViewRegister
 import UserCommentsAPI
-import SwiftHelperFunctions
+import SwiftHelpers
 
 class UserScreen: UIViewController {
     
@@ -24,7 +23,7 @@ class UserScreen: UIViewController {
 
 extension UserScreen: LoadingShowable{
     fileprivate func fetchUserList(){
-        
+        showLoading()
         UserDataService.service.fetchUserData(url: "https://jsonplaceholder.typicode.com/users") {
             [weak self] (response: Result<[User], Error>) -> Void in
             guard let self = self else { return }

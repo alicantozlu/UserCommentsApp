@@ -6,14 +6,20 @@
 //
 
 import UIKit
-import CollectionViewRegister
 import UserCommentsAPI
-import SwiftHelperFunctions
+import SwiftHelpers
+
+/*protocol sendPost{
+    func sendPostTitle(title: String)
+    func sendPostBody(body: String)
+}*/
 
 class UserPostsScreen: UIViewController {
     
     @IBOutlet var postCollectionView: UICollectionView!
     private var userPostsData = [UserPost]()
+    
+    //var delegate: sendPost?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +31,7 @@ class UserPostsScreen: UIViewController {
 
 extension UserPostsScreen: LoadingShowable{
     fileprivate func fetchUserPosts(){
+        showLoading()
         UserDataService.service.fetchUserData(url: "https://jsonplaceholder.typicode.com/posts") {
             [weak self] (response: Result<[UserPost], Error>) -> Void in
             guard let self = self else { return }
@@ -54,7 +61,16 @@ extension UserPostsScreen: UICollectionViewDataSource{
 
 extension UserPostsScreen: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        SwiftHelper.helper.screenPresenter(self, "postCommentsScreenIdentifier", .fullScreen, .flipHorizontal, "UserCommentsScreen'e Geçildi")
+        
+        let postDetailScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "postDetailScreenIdentifier") as! PostDetailScreen
+        postDetailScreenVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        postDetailScreenVC.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        
+        PostDetailScreen.titleText = userPostsData[indexPath.row].title ?? "Post Title"
+        PostDetailScreen.bodyText = userPostsData[indexPath.row].body ?? "Post Body"
+        
+        self.present(postDetailScreenVC, animated: true, completion: {print("PostDetailsScreen Açıldı")})
+
     }
 }
 
@@ -63,3 +79,5 @@ extension UserPostsScreen: UICollectionViewDelegateFlowLayout{
         return CGSize(width: view.frame.width, height: view.frame.width/4)
     }
 }
+
+

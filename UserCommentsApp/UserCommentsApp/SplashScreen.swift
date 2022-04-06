@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SwiftHelperFunctions
+import SwiftHelpers
 
 class SplashScreen: UIViewController {
     
