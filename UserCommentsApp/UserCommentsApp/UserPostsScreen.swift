@@ -17,18 +17,17 @@ class UserPostsScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         postCollectionView.register(cellType: ReusableCollectionViewCell.self)
-        
         fetchUserPosts()
-        
         print(userPostsData)
     }
 }
 
-extension UserPostsScreen{
+extension UserPostsScreen: LoadingShowable{
     fileprivate func fetchUserPosts(){
-        UserDataService.service.fetchUserData(url: "https://jsonplaceholder.typicode.com/posts") { (response: Result<[UserPost], Error>) -> Void in
+        UserDataService.service.fetchUserData(url: "https://jsonplaceholder.typicode.com/posts") {
+            [weak self] (response: Result<[UserPost], Error>) -> Void in
+            guard let self = self else { return }
             switch response{
             case .success(let data):
                 self.userPostsData = data
@@ -61,6 +60,6 @@ extension UserPostsScreen: UICollectionViewDelegate{
 
 extension UserPostsScreen: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.width/3)
+        return CGSize(width: view.frame.width, height: view.frame.width/4)
     }
 }

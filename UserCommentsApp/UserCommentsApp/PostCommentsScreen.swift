@@ -16,16 +16,17 @@ class PostCommentsScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         commentCollectionView.register(cellType: ReusableCollectionViewCell.self)
-        
         fetchUserComments()
     }
 }
 
-extension PostCommentsScreen{
+extension PostCommentsScreen: LoadingShowable{
     fileprivate func fetchUserComments(){
-        UserDataService.service.fetchUserData(url: "https://jsonplaceholder.typicode.com/comments") { (response: Result<[UserComment], Error>) -> Void in
+        showLoading()
+        UserDataService.service.fetchUserData(url: "https://jsonplaceholder.typicode.com/comments") {
+            [weak self] (response: Result<[UserComment], Error>) -> Void in
+            guard let self = self else { return }
             switch response{
             case .success(let data):
                 self.userCommentsData = data
