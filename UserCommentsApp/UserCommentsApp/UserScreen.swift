@@ -17,16 +17,17 @@ class UserScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         userCollectionView.register(cellType: ReusableCollectionViewCell.self)
-        
         fetchUserList()
     }
 }
 
-extension UserScreen{
+extension UserScreen: LoadingShowable{
     fileprivate func fetchUserList(){
-        UserDataService.service.fetchUserData(url: "https://jsonplaceholder.typicode.com/users") { (response: Result<[User], Error>) -> Void in
+        
+        UserDataService.service.fetchUserData(url: "https://jsonplaceholder.typicode.com/users") {
+            [weak self] (response: Result<[User], Error>) -> Void in
+            guard let self = self else { return }
             switch response{
             case .success(let data):
                 self.userListData = data
@@ -59,6 +60,6 @@ extension UserScreen: UICollectionViewDelegate{
 
 extension UserScreen: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.width/3)
+        return CGSize(width: view.frame.width, height: view.frame.height/5)
     }
 }
