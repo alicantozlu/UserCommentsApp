@@ -14,7 +14,21 @@ public protocol UserDataProtocol where Self: AnyObject{
 
 public class UserDataService: UserDataProtocol{
     
+    
+    
+    
+    
+    
+    
     public static let service = UserDataService()
+    
+    
+    
+    
+    
+    
+    
+    
     public init() {}
     
     public func fetchUserData<T: Decodable>(url:String ,completion: @escaping (Result<T, Error>) -> Void) {

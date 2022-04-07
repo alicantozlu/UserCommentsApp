@@ -31,7 +31,7 @@ class PostDetailScreen: UIViewController {
         titleLabel.text = PostDetailScreen.titleText
         bodyLabel.text = PostDetailScreen.bodyText
         
-        CenterContainerView.roundCorners(corners: <#T##UIRectCorner#>, radius: <#T##CGFloat#>)
+        CenterContainerView.roundCorners(corners: .allCorners, radius: 15)
         
         screenConfig()
     }

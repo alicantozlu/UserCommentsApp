@@ -21,6 +21,11 @@ class PostCommentsScreen: UIViewController {
     }
 }
 
+
+
+
+
+
 extension PostCommentsScreen: LoadingShowable{
     fileprivate func fetchUserComments(){
         showLoading()
@@ -37,6 +42,12 @@ extension PostCommentsScreen: LoadingShowable{
         }
     }
 }
+
+
+
+
+
+
 
 extension PostCommentsScreen: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

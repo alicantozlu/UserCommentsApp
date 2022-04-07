@@ -6,55 +6,49 @@
 //
 
 import UIKit
-import UserCommentsAPI
 import SwiftHelpers
-
-/*protocol sendPost{
-    func sendPostTitle(title: String)
-    func sendPostBody(body: String)
-}*/
 
 class UserPostsScreen: UIViewController {
     
     @IBOutlet var postCollectionView: UICollectionView!
-    private var userPostsData = [UserPost]()
     
-    //var delegate: sendPost?
+    var userPostsScreenVM: UserPostsScreenViewModelProtocol!{
+        didSet{
+            userPostsScreenVM.delegate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         postCollectionView.register(cellType: ReusableCollectionViewCell.self)
-        fetchUserPosts()
-        print(userPostsData)
+        userPostsScreenVM.fetchData()
     }
 }
 
-extension UserPostsScreen: LoadingShowable{
-    fileprivate func fetchUserPosts(){
+extension UserPostsScreen: UserPostsScreenViewModelDelegate, LoadingShowable{
+    func showLoadingView() {
         showLoading()
-        UserDataService.service.fetchUserData(url: "https://jsonplaceholder.typicode.com/posts") {
-            [weak self] (response: Result<[UserPost], Error>) -> Void in
-            guard let self = self else { return }
-            switch response{
-            case .success(let data):
-                self.userPostsData = data
-                self.postCollectionView.reloadData()
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+    }
+    
+    func hideLoadingView() {
+        hideLoading()
+    }
+    
+    func reloadData() {
+        postCollectionView.reloadData()
     }
 }
 
 extension UserPostsScreen: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return userPostsData.count
+        return userPostsScreenVM.numberOfItems
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellType: ReusableCollectionViewCell.self, indexPath: indexPath)
-        let post = self.userPostsData[indexPath.row]
-        cell.configUserPosts(model: post)
+        if let post = userPostsScreenVM.getDataIndex(index: indexPath.row){
+            cell.configUserPosts(model: post)
+        }
         return cell
     }
 }
@@ -66,8 +60,8 @@ extension UserPostsScreen: UICollectionViewDelegate{
         postDetailScreenVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         postDetailScreenVC.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         
-        PostDetailScreen.titleText = userPostsData[indexPath.row].title ?? "Post Title"
-        PostDetailScreen.bodyText = userPostsData[indexPath.row].body ?? "Post Body"
+        PostDetailScreen.titleText = userPostsScreenVM.getDataIndex(index: indexPath.row)?.title ?? "Post Title"
+        PostDetailScreen.titleText = userPostsScreenVM.getDataIndex(index: indexPath.row)?.body ?? "Post Body"
         
         self.present(postDetailScreenVC, animated: true, completion: {print("PostDetailsScreen Açıldı")})
 
