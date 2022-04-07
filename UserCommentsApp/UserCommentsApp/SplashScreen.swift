@@ -23,6 +23,7 @@ class SplashScreen: UIViewController {
             VC.userScreenVM = viewModel
             
             self.present(VC, animated: true, completion: {print("SplashScreen'e Geçildi")})
+        
         }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserCommentsAPI
 import SwiftHelpers
 
 class UserScreen: UIViewController {
@@ -37,7 +38,6 @@ extension UserScreen: UserScreenViewModelDelegate, LoadingShowable{
     func reloadData() {
         userCollectionView.reloadData()
     }
-    
 }
 
 extension UserScreen: UICollectionViewDataSource{
@@ -56,7 +56,17 @@ extension UserScreen: UICollectionViewDataSource{
 
 extension UserScreen: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        SwiftHelper.helper.screenPresenter(self, "userPostsScreenIdentifier", .fullScreen, .flipHorizontal, "UserPostsScreen'e Geçildi")
+        /*SwiftHelper.helper.screenPresenter(self, "userPostsScreenIdentifier", .fullScreen, .flipHorizontal, "UserPostsScreen'e Geçildi")*/
+        
+        let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userPostsScreenIdentifier") as! UserPostsScreen
+        VC.modalPresentationStyle = .fullScreen
+        VC.modalTransitionStyle = .flipHorizontal
+        
+        let viewModel = UserPostsScreenViewModel(service: UserDataService())
+        VC.userPostsScreenVM = viewModel
+        
+        self.present(VC, animated: true, completion: {print("UserPostsScreen'e Geçildi")})
+        
     }
 }
 
