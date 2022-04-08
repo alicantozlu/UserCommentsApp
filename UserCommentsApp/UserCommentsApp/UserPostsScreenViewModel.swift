@@ -28,12 +28,10 @@ final class UserPostsScreenViewModel{
     weak var delegate: UserPostsScreenViewModelDelegate?
     
     let service: UserDataProtocol
-    
     init(service: UserDataProtocol){
         self.service = service
     }
 }
-
 
 extension UserPostsScreenViewModel: UserPostsScreenViewModelProtocol{
     func getDataIndex(index: Int) -> UserPost? {
@@ -48,7 +46,6 @@ extension UserPostsScreenViewModel: UserPostsScreenViewModelProtocol{
         fetchUserPosts()
     }
 }
-
 
 extension UserPostsScreenViewModel{
     fileprivate func fetchUserPosts(){

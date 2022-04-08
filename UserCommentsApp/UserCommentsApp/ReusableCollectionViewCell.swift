@@ -17,10 +17,7 @@ class ReusableCollectionViewCell: UICollectionViewCell {
     @IBOutlet var downLabelStack: UIStackView!
     @IBOutlet var downLeftLabel: UILabel!
     @IBOutlet var downRightLabel: UILabel!
-    
-    @IBOutlet var bottomButtonStack: UIStackView!
-    @IBOutlet var nextPageButton: UIButton!
-    
+
     var screen: String?
     
     override func awakeFromNib() {
@@ -78,12 +75,6 @@ extension ReusableCollectionViewCell{
             downRightLabel.isHidden = false
             downRightLabel.textAlignment = .left
             
-            //Bottom Button Stack
-            bottomButtonStack.isHidden = true
-            
-            //Button
-            //nextPageButton.titleLabel?.text = "None"
-            
         case is UserPost:
             //Up Label Stack
             upLabelStack.isHidden = false
@@ -110,12 +101,7 @@ extension ReusableCollectionViewCell{
             //downRightLabel.text = "None"
             //downRightLabel.isHidden = true
             //downRightLabel.textAlignment = .center
-            
-            //Bottom Button Stack
-            bottomButtonStack.isHidden = false
-            //Button
-            nextPageButton.titleLabel?.text = "Show More"
-            
+
         case is UserComment:
             //Up Label Stack
             upLabelStack.isHidden = false
@@ -142,12 +128,7 @@ extension ReusableCollectionViewCell{
             //downRightLabel.text = "None"
             downRightLabel.isHidden = true
             //downRightLabel.textAlignment = .center
-            
-            //Bottom Button Stack
-            bottomButtonStack.isHidden = true
-            
-            //Button
-            //nextPageButton.titleLabel?.text = "Read Comments"
+
         default:
             print("No Screen")
         }

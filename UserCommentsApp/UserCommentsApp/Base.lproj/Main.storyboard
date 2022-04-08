@@ -17,23 +17,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6St-NB-zOL">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="among1R" translatesAutoresizingMaskIntoConstraints="NO" id="B9J-Ur-gfF">
                                 <rect key="frame" x="20" y="64" width="374" height="778"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="6St-NB-zOL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4kr-SY-bqR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B9J-Ur-gfF" secondAttribute="trailing" constant="20" id="5lg-5C-BbW"/>
                             <constraint firstItem="B9J-Ur-gfF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="JAk-mI-cBt"/>
+                            <constraint firstAttribute="bottom" secondItem="6St-NB-zOL" secondAttribute="bottom" id="Z3S-Fg-RpZ"/>
                             <constraint firstItem="B9J-Ur-gfF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="gsX-q6-Mw1"/>
+                            <constraint firstItem="6St-NB-zOL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gtX-Zd-Bb7"/>
+                            <constraint firstAttribute="trailing" secondItem="6St-NB-zOL" secondAttribute="trailing" id="nZs-Z2-p42"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="B9J-Ur-gfF" secondAttribute="bottom" constant="20" id="vgY-Gw-pGq"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="117"/>
+            <point key="canvasLocation" x="131.8840579710145" y="116.51785714285714"/>
         </scene>
         <!--User Screen-->
         <scene sceneID="L5U-m7-a6V">
@@ -43,6 +50,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y7d-qO-tqe">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XJG-Nk-ueq">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -67,17 +78,30 @@
                                     <outlet property="delegate" destination="9NE-NJ-qoR" id="f1C-D1-yeX"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzB-Tr-CJF">
+                                <rect key="frame" x="20" y="813" width="56" height="31"/>
+                                <color key="backgroundColor" red="0.094117647060000004" green="0.1019607843" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="9NE-NJ-qoR" eventType="touchUpInside" id="8N0-R3-ItH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IR9-xx-RBz"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XJG-Nk-ueq" firstAttribute="leading" secondItem="IR9-xx-RBz" secondAttribute="leading" id="0Hb-FD-7te"/>
                             <constraint firstItem="IR9-xx-RBz" firstAttribute="trailing" secondItem="XJG-Nk-ueq" secondAttribute="trailing" id="bMJ-vE-cuN"/>
                             <constraint firstItem="XJG-Nk-ueq" firstAttribute="top" secondItem="IR9-xx-RBz" secondAttribute="top" id="e0G-eb-d38"/>
+                            <constraint firstItem="IR9-xx-RBz" firstAttribute="bottom" secondItem="zzB-Tr-CJF" secondAttribute="bottom" constant="20" id="eRp-aU-4tD"/>
+                            <constraint firstItem="zzB-Tr-CJF" firstAttribute="leading" secondItem="IR9-xx-RBz" secondAttribute="leading" constant="20" id="giY-zb-dbH"/>
                             <constraint firstItem="IR9-xx-RBz" firstAttribute="bottom" secondItem="XJG-Nk-ueq" secondAttribute="bottom" id="xxk-Hv-76n"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="zzB-Tr-CJF" id="gJv-ez-bHq"/>
                         <outlet property="userCollectionView" destination="XJG-Nk-ueq" id="aCr-0s-eh2"/>
                     </connections>
                 </viewController>
@@ -117,23 +141,36 @@
                                     <outlet property="delegate" destination="WDr-By-UVj" id="CAz-ad-8v4"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7K-d8-6rS">
+                                <rect key="frame" x="20" y="811" width="56" height="31"/>
+                                <color key="backgroundColor" red="0.094117647060000004" green="0.1019607843" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="WDr-By-UVj" eventType="touchUpInside" id="znd-Y8-Va9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="A01-E4-eDF"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="A01-E4-eDF" firstAttribute="bottom" secondItem="I7K-d8-6rS" secondAttribute="bottom" constant="20" id="U5x-fe-w3s"/>
                             <constraint firstItem="rXV-NW-QPH" firstAttribute="leading" secondItem="A01-E4-eDF" secondAttribute="leading" id="Uj6-w7-ig9"/>
                             <constraint firstItem="A01-E4-eDF" firstAttribute="bottom" secondItem="rXV-NW-QPH" secondAttribute="bottom" id="Ywi-jS-QXx"/>
                             <constraint firstItem="A01-E4-eDF" firstAttribute="trailing" secondItem="rXV-NW-QPH" secondAttribute="trailing" id="be8-Bz-AOk"/>
                             <constraint firstItem="rXV-NW-QPH" firstAttribute="top" secondItem="A01-E4-eDF" secondAttribute="top" id="iyY-Xj-uum"/>
+                            <constraint firstItem="I7K-d8-6rS" firstAttribute="leading" secondItem="A01-E4-eDF" secondAttribute="leading" constant="20" id="sTU-y6-5eY"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="I7K-d8-6rS" id="hBV-WW-4wY"/>
                         <outlet property="postCollectionView" destination="rXV-NW-QPH" id="zQ2-Kr-iKu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTu-c9-iZK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1588" y="112"/>
+            <point key="canvasLocation" x="1586.9565217391305" y="111.83035714285714"/>
         </scene>
         <!--Post Detail Screen-->
         <scene sceneID="hV2-dq-r1Q">
@@ -281,6 +318,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CTr-rL-Eqp">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BqQ-m1-pEO">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -305,17 +346,30 @@
                                     <outlet property="delegate" destination="bhY-Wg-7sg" id="oDa-8j-oBN"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UER-kw-Uch">
+                                <rect key="frame" x="20" y="811" width="56" height="31"/>
+                                <color key="backgroundColor" red="0.094117647060000004" green="0.1019607843" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="bhY-Wg-7sg" eventType="touchUpInside" id="JYU-jx-CeY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gQD-aZ-TaM"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="UER-kw-Uch" firstAttribute="leading" secondItem="gQD-aZ-TaM" secondAttribute="leading" constant="20" id="GBG-eD-EO5"/>
                             <constraint firstItem="BqQ-m1-pEO" firstAttribute="top" secondItem="gQD-aZ-TaM" secondAttribute="top" id="LW3-ba-z3d"/>
                             <constraint firstItem="gQD-aZ-TaM" firstAttribute="bottom" secondItem="BqQ-m1-pEO" secondAttribute="bottom" id="O6t-rs-LZh"/>
+                            <constraint firstItem="gQD-aZ-TaM" firstAttribute="bottom" secondItem="UER-kw-Uch" secondAttribute="bottom" constant="20" id="Wgb-3e-TuS"/>
                             <constraint firstItem="BqQ-m1-pEO" firstAttribute="leading" secondItem="gQD-aZ-TaM" secondAttribute="leading" id="nQt-xB-Bja"/>
                             <constraint firstItem="gQD-aZ-TaM" firstAttribute="trailing" secondItem="BqQ-m1-pEO" secondAttribute="trailing" id="zkw-bR-4Vr"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="UER-kw-Uch" id="IZS-u8-UDh"/>
                         <outlet property="commentCollectionView" destination="BqQ-m1-pEO" id="wtf-r0-DUM"/>
                     </connections>
                 </viewController>

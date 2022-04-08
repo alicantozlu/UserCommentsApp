@@ -11,6 +11,7 @@ import SwiftHelpers
 class UserPostsScreen: UIViewController {
     
     @IBOutlet var postCollectionView: UICollectionView!
+    @IBOutlet var backButton: UIButton!
     
     var userPostsScreenVM: UserPostsScreenViewModelProtocol!{
         didSet{
@@ -20,14 +21,22 @@ class UserPostsScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        backButton.isHidden = false
+        
         postCollectionView.register(cellType: ReusableCollectionViewCell.self)
         userPostsScreenVM.fetchData()
     }
 }
 
+extension UserPostsScreen{
+    @IBAction func backButtonAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
 extension UserPostsScreen: UserPostsScreenViewModelDelegate, LoadingShowable{
     func showLoadingView() {
-        showLoading()
+        //showLoading()
     }
     
     func hideLoadingView() {

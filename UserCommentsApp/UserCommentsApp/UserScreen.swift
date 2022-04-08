@@ -12,6 +12,7 @@ import SwiftHelpers
 class UserScreen: UIViewController {
     
     @IBOutlet var userCollectionView: UICollectionView!
+    @IBOutlet var backButton: UIButton!
     
     var userScreenVM: UserScreenViewModelProtocol!{
         didSet{
@@ -21,14 +22,22 @@ class UserScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        backButton.isHidden = true
+        
         userCollectionView.register(cellType: ReusableCollectionViewCell.self)
         userScreenVM.fetchData()
     }
 }
 
+extension UserScreen{
+    @IBAction func backButtonAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
 extension UserScreen: UserScreenViewModelDelegate, LoadingShowable{
     func showLoadingView() {
-        showLoading()
+        //showLoading()
     }
     
     func hideLoadingView() {
@@ -72,6 +81,6 @@ extension UserScreen: UICollectionViewDelegate{
 
 extension UserScreen: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height/5)
+        return CGSize(width: view.frame.width, height: view.frame.height/4)
     }
 }

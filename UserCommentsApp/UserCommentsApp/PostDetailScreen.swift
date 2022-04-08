@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SwiftHelpers
+import UserCommentsAPI
 
 class PostDetailScreen: UIViewController {
 
@@ -47,7 +47,16 @@ class PostDetailScreen: UIViewController {
     }
     
     @IBAction func readCommentsButtonAction(_ sender: Any) {
-        SwiftHelper.helper.screenPresenter(self, "postCommentsScreenIdentifier", .fullScreen, .flipHorizontal, "UserCommentsScreen'e Geçildi")
+        //SwiftHelper.helper.screenPresenter(self, "postCommentsScreenIdentifier", .fullScreen, .flipHorizontal, "UserCommentsScreen'e Geçildi")
+        
+        let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "postCommentsScreenIdentifier") as! PostCommentsScreen
+        VC.modalPresentationStyle = .fullScreen
+        VC.modalTransitionStyle = .flipHorizontal
+        
+        let viewModel = PostCommentsScreenViewModel(service: UserDataService())
+        VC.postCommentsScreenVM = viewModel
+        
+        self.present(VC, animated: true, completion: {print("UserCommentsScreen'e Geçildi")})
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
