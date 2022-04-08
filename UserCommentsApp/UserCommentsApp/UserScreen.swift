@@ -22,6 +22,9 @@ class UserScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        userCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: view.frame.height/4, right: 0)
+        
         backButton.isHidden = true
         
         userCollectionView.register(cellType: ReusableCollectionViewCell.self)

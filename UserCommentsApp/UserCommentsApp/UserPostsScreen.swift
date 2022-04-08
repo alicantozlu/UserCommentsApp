@@ -11,6 +11,8 @@ import SwiftHelpers
 class UserPostsScreen: UIViewController {
     
     @IBOutlet var postCollectionView: UICollectionView!
+    
+    @IBOutlet var backButtonContainerView: UIView!
     @IBOutlet var backButton: UIButton!
     @IBOutlet var backButtonBlur: UIVisualEffectView!
     
@@ -23,7 +25,10 @@ class UserPostsScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        postCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: view.frame.height/8, right: 0)
+        
+        backButtonContainerView.backgroundColor = .clear
+        
         backButton.isHidden = false
         backButtonBlur.cornerConfigure(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMaxYCorner,.layerMinXMaxYCorner,.layerMaxXMinYCorner], borderColor: UIColor.white.cgColor, borderWidth: 1)
         
@@ -74,7 +79,7 @@ extension UserPostsScreen: UICollectionViewDelegate{
         postDetailScreenVC.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         
         PostDetailScreen.titleText = userPostsScreenVM.getDataIndex(index: indexPath.row)?.title ?? "Post Title"
-        PostDetailScreen.titleText = userPostsScreenVM.getDataIndex(index: indexPath.row)?.body ?? "Post Body"
+        PostDetailScreen.bodyText = userPostsScreenVM.getDataIndex(index: indexPath.row)?.body ?? "Post Body"
         
         self.present(postDetailScreenVC, animated: true, completion: {print("PostDetailsScreen Açıldı")})
 

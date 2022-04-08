@@ -11,6 +11,8 @@ import SwiftHelpers
 class PostCommentsScreen: UIViewController {
     
     @IBOutlet var commentCollectionView: UICollectionView!
+    
+    @IBOutlet var backButtonContainerView: UIView!
     @IBOutlet var backButton: UIButton!
     @IBOutlet var backButtonBlur: UIVisualEffectView!
     
@@ -22,6 +24,10 @@ class PostCommentsScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        commentCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: view.frame.height/4, right: 0)
+        
+        backButtonContainerView.backgroundColor = .clear
 
         backButton.isHidden = false
         backButtonBlur.cornerConfigure(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMaxYCorner,.layerMinXMaxYCorner,.layerMaxXMinYCorner], borderColor: UIColor.white.cgColor, borderWidth: 1)
