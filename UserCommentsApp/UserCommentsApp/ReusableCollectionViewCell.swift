@@ -7,8 +7,14 @@
 
 import UIKit
 import UserCommentsAPI
+import SwiftHelpers
 
 class ReusableCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet var containerView: UIView!
+    
+    @IBOutlet var topBackgroundBlur: UIVisualEffectView!
+    @IBOutlet var bottomBackgroundBlur: UIVisualEffectView!
     
     @IBOutlet var upLabelStack: UIStackView!
     @IBOutlet var upLeftLabel: UILabel!
@@ -22,16 +28,18 @@ class ReusableCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        containerView.cornerConfigure(cornerRadius: 10, maskedCorners: [.layerMaxXMaxYCorner, .layerMinXMaxYCorner,.layerMaxXMinYCorner,.layerMinXMinYCorner], borderColor: UIColor.white.cgColor, borderWidth: 1)
     }
 }
 
 extension ReusableCollectionViewCell{
     func configUsers(model: User){
         screenCustomization(model: model)
-        upLeftLabel.text = model.name ?? "Name"
-        upRightLabel.text = model.username ?? "Username"
-        downLeftLabel.text = model.email ?? "Email"
-        downRightLabel.text = model.phone ?? "Phone"
+        upLeftLabel.text = "Name: \(model.name ?? "Name")"
+        upRightLabel.text = "Username: \(model.username ?? "Username")"
+        downLeftLabel.text = "Email: \(model.email ?? "Email")"
+        downRightLabel.text = "Phone: \(model.phone ?? "Phone")"
     }
     
     func configUserPosts(model: UserPost){
@@ -41,26 +49,28 @@ extension ReusableCollectionViewCell{
     
     func configUserComments(model: UserComment){
         screenCustomization(model: model)
-        upLeftLabel.text = model.name ?? "Name"
-        upRightLabel.text = model.email ?? "Email"
+        upLeftLabel.text = "Name: \(model.name ?? "Name")\n\nEmail: \(model.email ?? "Email")"
         downLeftLabel.text = model.body ?? "Body"
     }
     
     func screenCustomization<T: Decodable>(model: T){
         switch model {
         case is User:
+            
+            bottomBackgroundBlur.isHidden = false
+            
             //Up Label Stack
             upLabelStack.isHidden = false
             
             //Up Left Label
             //upLeftLabel.text = "Name"
             upLeftLabel.isHidden = false
-            upLeftLabel.textAlignment = .right
+            //upLeftLabel.textAlignment = .right
             
             //Up Right Label
             //upRightLabel.text = "UserName"
             upRightLabel.isHidden = false
-            upRightLabel.textAlignment = .left
+            //upRightLabel.textAlignment = .left
             
             //Down Label Stack
             downLabelStack.isHidden = false
@@ -68,21 +78,24 @@ extension ReusableCollectionViewCell{
             //Down Left Label
             //downLeftLabel.text = "email"
             downLeftLabel.isHidden = false
-            downLeftLabel.textAlignment = .right
+            //downLeftLabel.textAlignment = .right
             
             //Down Right Label
             //downRightLabel.text = "phone"
             downRightLabel.isHidden = false
-            downRightLabel.textAlignment = .left
+            //downRightLabel.textAlignment = .left
             
         case is UserPost:
+            
+            bottomBackgroundBlur.isHidden = true
+            
             //Up Label Stack
             upLabelStack.isHidden = false
             
             //Up Left Label
             //upLeftLabel.text = "Title"
             upLeftLabel.isHidden = false
-            upLeftLabel.textAlignment = .center
+            upLeftLabel.textAlignment = .left
             
             //Up Right Label
             //upRightLabel.text = "None"
@@ -103,18 +116,21 @@ extension ReusableCollectionViewCell{
             //downRightLabel.textAlignment = .center
 
         case is UserComment:
+            
+            bottomBackgroundBlur.isHidden = false
+            
             //Up Label Stack
             upLabelStack.isHidden = false
             
             //Up Left Label
             //upLeftLabel.text = "Name"
             upLeftLabel.isHidden = false
-            upLeftLabel.textAlignment = .right
+            //upLeftLabel.textAlignment = .right
             
             //Up Right Label
             //upRightLabel.text = "email"
-            upRightLabel.isHidden = false
-            upRightLabel.textAlignment = .left
+            upRightLabel.isHidden = true
+            //upRightLabel.textAlignment = .left
             
             //Down Label Stack
             downLabelStack.isHidden = false
@@ -122,7 +138,7 @@ extension ReusableCollectionViewCell{
             //Down Left Label
             //downLeftLabel.text = "body"
             downLeftLabel.isHidden = false
-            downLeftLabel.textAlignment = .center
+            //downLeftLabel.textAlignment = .center
             
             //Down Right Label
             //downRightLabel.text = "None"

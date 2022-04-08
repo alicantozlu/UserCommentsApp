@@ -12,6 +12,7 @@ class PostCommentsScreen: UIViewController {
     
     @IBOutlet var commentCollectionView: UICollectionView!
     @IBOutlet var backButton: UIButton!
+    @IBOutlet var backButtonBlur: UIVisualEffectView!
     
     var postCommentsScreenVM: postCommentsScreenViewModelProtocol!{
         didSet{
@@ -23,10 +24,7 @@ class PostCommentsScreen: UIViewController {
         super.viewDidLoad()
 
         backButton.isHidden = false
-        //backButton.backgroundColor = .clear
-        backButton.layer.cornerRadius = 30
-        backButton.layer.borderWidth = 1
-        backButton.layer.borderColor = UIColor.black.cgColor
+        backButtonBlur.cornerConfigure(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMaxYCorner,.layerMinXMaxYCorner,.layerMaxXMinYCorner], borderColor: UIColor.white.cgColor, borderWidth: 1)
         
         commentCollectionView.register(cellType: ReusableCollectionViewCell.self)
         postCommentsScreenVM.fetchData()
@@ -70,6 +68,6 @@ extension PostCommentsScreen: UICollectionViewDataSource{
 
 extension PostCommentsScreen: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.width/4)
+        return CGSize(width: view.frame.width, height: view.frame.height/3)
     }
 }

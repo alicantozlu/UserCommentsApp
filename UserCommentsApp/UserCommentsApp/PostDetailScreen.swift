@@ -31,7 +31,8 @@ class PostDetailScreen: UIViewController {
         titleLabel.text = PostDetailScreen.titleText
         bodyLabel.text = PostDetailScreen.bodyText
         
-        CenterContainerView.roundCorners(corners: .allCorners, radius: 15)
+        ContextContainerView.cornerConfigure(cornerRadius: 10, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMaxYCorner,.layerMinXMaxYCorner,.layerMaxXMinYCorner], borderColor: UIColor.white.cgColor, borderWidth: 1)
+        ContextContainerView.backgroundColor = UIColor.clear
         
         screenConfig()
     }

@@ -12,6 +12,7 @@ class UserPostsScreen: UIViewController {
     
     @IBOutlet var postCollectionView: UICollectionView!
     @IBOutlet var backButton: UIButton!
+    @IBOutlet var backButtonBlur: UIVisualEffectView!
     
     var userPostsScreenVM: UserPostsScreenViewModelProtocol!{
         didSet{
@@ -22,11 +23,9 @@ class UserPostsScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         backButton.isHidden = false
-        //backButton.backgroundColor = .clear
-        backButton.layer.cornerRadius = 30
-        backButton.layer.borderWidth = 1
-        backButton.layer.borderColor = UIColor.black.cgColor
+        backButtonBlur.cornerConfigure(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMaxYCorner,.layerMinXMaxYCorner,.layerMaxXMinYCorner], borderColor: UIColor.white.cgColor, borderWidth: 1)
         
         postCollectionView.register(cellType: ReusableCollectionViewCell.self)
         userPostsScreenVM.fetchData()
