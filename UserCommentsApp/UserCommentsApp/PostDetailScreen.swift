@@ -24,14 +24,17 @@ class PostDetailScreen: UIViewController {
     
     static var titleText: String?
     static var bodyText: String?
+    @IBOutlet var readCommentsButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         titleLabel.text = PostDetailScreen.titleText
         bodyLabel.text = PostDetailScreen.bodyText
+        readCommentsButton.cornerConfigure(cornerRadius: 10, maskedCorners: [ .layerMaxXMaxYCorner,.layerMinXMaxYCorner], borderColor: UIColor.white.cgColor, borderWidth: 1)
         
-        CenterContainerView.roundCorners(corners: .allCorners, radius: 15)
+        ContextContainerView.cornerConfigure(cornerRadius: 10, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMaxYCorner,.layerMinXMaxYCorner,.layerMaxXMinYCorner], borderColor: UIColor.white.cgColor, borderWidth: 1)
+        ContextContainerView.backgroundColor = UIColor.clear
         
         screenConfig()
     }
