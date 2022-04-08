@@ -21,7 +21,12 @@ class UserPostsScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         backButton.isHidden = false
+        //backButton.backgroundColor = .clear
+        backButton.layer.cornerRadius = 30
+        backButton.layer.borderWidth = 1
+        backButton.layer.borderColor = UIColor.black.cgColor
         
         postCollectionView.register(cellType: ReusableCollectionViewCell.self)
         userPostsScreenVM.fetchData()

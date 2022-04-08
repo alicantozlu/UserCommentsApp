@@ -21,7 +21,12 @@ class PostCommentsScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         backButton.isHidden = false
+        //backButton.backgroundColor = .clear
+        backButton.layer.cornerRadius = 30
+        backButton.layer.borderWidth = 1
+        backButton.layer.borderColor = UIColor.black.cgColor
         
         commentCollectionView.register(cellType: ReusableCollectionViewCell.self)
         postCommentsScreenVM.fetchData()
