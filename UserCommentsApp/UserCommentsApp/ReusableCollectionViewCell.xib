@@ -19,21 +19,37 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2S-Tp-1Ty">
                         <rect key="frame" x="14" y="7" width="487" height="234"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LP8-v5-ogG" userLabel="Top Stack Container">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LP8-v5-ogG" userLabel="Blur Stack Container">
                                 <rect key="frame" x="0.0" y="0.0" width="487" height="234"/>
                                 <subviews>
                                     <visualEffectView opaque="NO" alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Jf-XG-Ggg">
-                                        <rect key="frame" x="0.0" y="0.0" width="487" height="117"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="487" height="58.5"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XCW-NM-46N">
-                                            <rect key="frame" x="0.0" y="0.0" width="487" height="117"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="487" height="58.5"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                         <blurEffect style="light"/>
                                     </visualEffectView>
+                                    <visualEffectView opaque="NO" alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6aR-Fs-lik">
+                                        <rect key="frame" x="0.0" y="58.5" width="487" height="58.5"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BQ6-i8-cVY">
+                                            <rect key="frame" x="0.0" y="0.0" width="487" height="58.5"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                        <blurEffect style="light"/>
+                                    </visualEffectView>
+                                    <visualEffectView opaque="NO" alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCw-P2-cZD">
+                                        <rect key="frame" x="0.0" y="117" width="487" height="58.5"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Lox-Xi-Wuo">
+                                            <rect key="frame" x="0.0" y="0.0" width="487" height="58.5"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                        <blurEffect style="extraLight"/>
+                                    </visualEffectView>
                                     <visualEffectView opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s4V-HS-zdb">
-                                        <rect key="frame" x="0.0" y="117" width="487" height="117"/>
+                                        <rect key="frame" x="0.0" y="175.5" width="487" height="58.5"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="isq-kR-NTj">
-                                            <rect key="frame" x="0.0" y="0.0" width="487" height="117"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="487" height="58.5"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                         <blurEffect style="extraLight"/>
@@ -43,140 +59,129 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Yib-dm-Jmm" userLabel="Top Stack Container">
                                 <rect key="frame" x="15" y="0.0" width="457" height="234"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="87g-lW-R96" userLabel="Up Label Stack">
-                                        <rect key="frame" x="0.0" y="0.0" width="457" height="117"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YwZ-6y-BhN" userLabel="Top_1 Stack">
+                                        <rect key="frame" x="0.0" y="0.0" width="457" height="58.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YwZ-6y-BhN">
-                                                <rect key="frame" x="0.0" y="0.0" width="457" height="58.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiW-rV-gPc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="62" height="58.5"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="Name: ">
-                                                                <attributes>
-                                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" size="17" name="Georgia-Bold"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="kHb-zN-1px">
-                                                        <rect key="frame" x="62" y="0.0" width="395" height="58.5"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="userScreen:Name &amp; UserPostScreen: Title &amp; PostCommentsScreen:Name ">
-                                                                <attributes>
-                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHG-e7-uS1">
-                                                <rect key="frame" x="0.0" y="58.5" width="457" height="58.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1K-X3-1v8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="61.5" height="58.5"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="Username: ">
-                                                                <attributes>
-                                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" size="17" name="Georgia-Bold"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="a9u-io-dV0">
-                                                        <rect key="frame" x="61.5" y="0.0" width="395.5" height="58.5"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="userScreen:UserName &amp; UserPostScreen:Hidden &amp; PostCommentsScreen: email">
-                                                                <attributes>
-                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiW-rV-gPc">
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="58.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Top_1">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="16" name="Georgia-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="kHb-zN-1px">
+                                                <rect key="frame" x="51" y="0.0" width="406" height="58.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="userScreen:Name &amp; UserPostScreen: Title &amp; PostCommentsScreen:Name ">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" metaFont="system" size="16"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="SA2-gn-Gaq" userLabel="Down Label Stack">
-                                        <rect key="frame" x="0.0" y="117" width="457" height="117"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHG-e7-uS1" userLabel="Top_2 Stack">
+                                        <rect key="frame" x="0.0" y="58.5" width="457" height="58.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AtG-su-w5t">
-                                                <rect key="frame" x="0.0" y="0.0" width="457" height="58.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62b-ZQ-EtS">
-                                                        <rect key="frame" x="0.0" y="0.0" width="62.5" height="58.5"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="Email: ">
-                                                                <attributes>
-                                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" size="17" name="Georgia-Bold"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="8IK-WZ-D1r">
-                                                        <rect key="frame" x="62.5" y="0.0" width="394.5" height="58.5"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="userScreen:email &amp; UserPostScreen:Hidden &amp; PostCommentsScreen:body">
-                                                                <attributes>
-                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPZ-y7-YpX">
-                                                <rect key="frame" x="0.0" y="58.5" width="457" height="58.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICT-fZ-9zV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="58.5"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="Phone: ">
-                                                                <attributes>
-                                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <font key="NSFont" size="17" name="Georgia-Bold"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="lfs-YJ-DSG">
-                                                        <rect key="frame" x="66.5" y="0.0" width="390.5" height="58.5"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="userScreen:phone &amp; UserPostScreen:Hidden &amp; PostCommentsScreen:hidden">
-                                                                <attributes>
-                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1K-X3-1v8">
+                                                <rect key="frame" x="0.0" y="0.0" width="53" height="58.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Top_2">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="16" name="Georgia-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="a9u-io-dV0">
+                                                <rect key="frame" x="53" y="0.0" width="404" height="58.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="userScreen:UserName &amp; UserPostScreen:Hidden &amp; PostCommentsScreen: email">
+                                                        <attributes>
+                                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <font key="NSFont" metaFont="system" size="16"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AtG-su-w5t" userLabel="Bottom_1 Stack">
+                                        <rect key="frame" x="0.0" y="117" width="457" height="58.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62b-ZQ-EtS">
+                                                <rect key="frame" x="0.0" y="0.0" width="81" height="58.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Bottom_1">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="16" name="Georgia-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="8IK-WZ-D1r">
+                                                <rect key="frame" x="81" y="0.0" width="376" height="58.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="userScreen:email &amp; UserPostScreen:Hidden &amp; PostCommentsScreen:body">
+                                                        <attributes>
+                                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <font key="NSFont" metaFont="system" size="16"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPZ-y7-YpX" userLabel="Bottom_2 Stack">
+                                        <rect key="frame" x="0.0" y="175.5" width="457" height="58.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICT-fZ-9zV">
+                                                <rect key="frame" x="0.0" y="0.0" width="83" height="58.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Bottom_2">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="16" name="Georgia-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="lfs-YJ-DSG">
+                                                <rect key="frame" x="83" y="0.0" width="374" height="58.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="userScreen:phone &amp; UserPostScreen:Hidden &amp; PostCommentsScreen:hidden">
+                                                        <attributes>
+                                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <font key="NSFont" metaFont="system" size="16"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -204,20 +209,23 @@
             </constraints>
             <size key="customSize" width="515" height="241"/>
             <connections>
-                <outlet property="bottomBackgroundBlur" destination="s4V-HS-zdb" id="1by-wT-VVT"/>
+                <outlet property="bottom_1BackgroundBlur" destination="cCw-P2-cZD" id="OiZ-JE-b3R"/>
+                <outlet property="bottom_1ContainerStack" destination="AtG-su-w5t" id="nSb-F3-e1X"/>
+                <outlet property="bottom_1LeftLabel" destination="62b-ZQ-EtS" id="vAK-oX-osw"/>
+                <outlet property="bottom_1RightLabel" destination="8IK-WZ-D1r" id="Dlw-UU-i9l"/>
+                <outlet property="bottom_2BackgroundBlur" destination="s4V-HS-zdb" id="1by-wT-VVT"/>
+                <outlet property="bottom_2ContainerStack" destination="MPZ-y7-YpX" id="GYR-rH-gSg"/>
+                <outlet property="bottom_2LeftLabel" destination="ICT-fZ-9zV" id="bq2-wB-1hg"/>
+                <outlet property="bottom_2RightLabel" destination="lfs-YJ-DSG" id="ZCv-LS-ZE2"/>
                 <outlet property="containerView" destination="L2S-Tp-1Ty" id="XVk-Z6-BAH"/>
-                <outlet property="downLabelStack" destination="SA2-gn-Gaq" id="G0a-Q3-Qut"/>
-                <outlet property="downLeftLabel" destination="8IK-WZ-D1r" id="Dlw-UU-i9l"/>
-                <outlet property="downLeftLeadingLabel" destination="62b-ZQ-EtS" id="vAK-oX-osw"/>
-                <outlet property="downRightLabel" destination="lfs-YJ-DSG" id="ZCv-LS-ZE2"/>
-                <outlet property="downRightLabelsStack" destination="MPZ-y7-YpX" id="GYR-rH-gSg"/>
-                <outlet property="downRightLeadingLabel" destination="ICT-fZ-9zV" id="bq2-wB-1hg"/>
-                <outlet property="topBackgroundBlur" destination="0Jf-XG-Ggg" id="TOf-R6-1Pr"/>
-                <outlet property="upLabelStack" destination="87g-lW-R96" id="UWX-jX-hwg"/>
-                <outlet property="upLeftLabel" destination="kHb-zN-1px" id="QuG-yw-IBL"/>
-                <outlet property="upLeftLeadingLabel" destination="aiW-rV-gPc" id="HCH-jr-yuG"/>
-                <outlet property="upRightLabel" destination="a9u-io-dV0" id="jcX-0p-cxG"/>
-                <outlet property="upRightLeadingLabel" destination="a1K-X3-1v8" id="2Gi-y2-rQB"/>
+                <outlet property="top_1BackgroundBlur" destination="0Jf-XG-Ggg" id="TOf-R6-1Pr"/>
+                <outlet property="top_1ContainerStack" destination="YwZ-6y-BhN" id="clj-xc-9kK"/>
+                <outlet property="top_1LeftLabel" destination="aiW-rV-gPc" id="HCH-jr-yuG"/>
+                <outlet property="top_1RightLabel" destination="kHb-zN-1px" id="QuG-yw-IBL"/>
+                <outlet property="top_2BackgroundBlur" destination="6aR-Fs-lik" id="JGo-z8-c6e"/>
+                <outlet property="top_2ContainerStack" destination="dHG-e7-uS1" id="WOE-Mt-8oz"/>
+                <outlet property="top_2LeftLabel" destination="a1K-X3-1v8" id="2Gi-y2-rQB"/>
+                <outlet property="top_2RightLabel" destination="a9u-io-dV0" id="jcX-0p-cxG"/>
             </connections>
             <point key="canvasLocation" x="468.84057971014494" y="198.54910714285714"/>
         </collectionViewCell>

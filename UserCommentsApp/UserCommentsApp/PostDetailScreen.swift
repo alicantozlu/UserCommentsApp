@@ -29,8 +29,9 @@ class PostDetailScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleLabel.text = PostDetailScreen.titleText
-        bodyLabel.text = PostDetailScreen.bodyText
+        titleLabel.text = PostDetailScreen.titleText?.capitalized
+        bodyLabel.text = PostDetailScreen.bodyText?.capitalized
+        
         readCommentsButton.cornerConfigure(cornerRadius: 10, maskedCorners: [ .layerMaxXMaxYCorner,.layerMinXMaxYCorner], borderColor: UIColor.white.cgColor, borderWidth: 1)
         
         ContextContainerView.cornerConfigure(cornerRadius: 10, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMaxYCorner,.layerMinXMaxYCorner,.layerMaxXMinYCorner], borderColor: UIColor.white.cgColor, borderWidth: 1)

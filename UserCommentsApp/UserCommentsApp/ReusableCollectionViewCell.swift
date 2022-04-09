@@ -13,28 +13,28 @@ class ReusableCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var containerView: UIView!
     
-    @IBOutlet var topBackgroundBlur: UIVisualEffectView!
-    @IBOutlet var bottomBackgroundBlur: UIVisualEffectView!
+    @IBOutlet var top_1BackgroundBlur: UIVisualEffectView!
+    @IBOutlet var top_2BackgroundBlur: UIVisualEffectView!
+    
+    @IBOutlet var bottom_1BackgroundBlur: UIVisualEffectView!
+    @IBOutlet var bottom_2BackgroundBlur: UIVisualEffectView!
     
     
+    @IBOutlet var top_1ContainerStack: UIStackView!
+    @IBOutlet var top_1LeftLabel: UILabel!
+    @IBOutlet var top_1RightLabel: UILabel!
     
-    @IBOutlet var upLabelStack: UIStackView!
-    @IBOutlet var upLeftLabel: UILabel!
-    @IBOutlet var upRightLabel: UILabel!
+    @IBOutlet var top_2ContainerStack: UIStackView!
+    @IBOutlet var top_2LeftLabel: UILabel!
+    @IBOutlet var top_2RightLabel: UILabel!
     
-    @IBOutlet var upLeftLeadingLabel: UILabel!
-    @IBOutlet var upRightLeadingLabel: UILabel!
+    @IBOutlet var bottom_1ContainerStack: UIStackView!
+    @IBOutlet var bottom_1LeftLabel: UILabel!
+    @IBOutlet var bottom_1RightLabel: UILabel!
     
-    
-    
-    @IBOutlet var downLabelStack: UIStackView!
-    @IBOutlet var downLeftLabel: UILabel!
-    @IBOutlet var downRightLabel: UILabel!
-    
-    @IBOutlet var downRightLabelsStack: UIStackView!
-    @IBOutlet var downLeftLeadingLabel: UILabel!
-    @IBOutlet var downRightLeadingLabel: UILabel!
-    
+    @IBOutlet var bottom_2ContainerStack: UIStackView!
+    @IBOutlet var bottom_2LeftLabel: UILabel!
+    @IBOutlet var bottom_2RightLabel: UILabel!
     
     var screen: String?
     
@@ -48,106 +48,174 @@ class ReusableCollectionViewCell: UICollectionViewCell {
 extension ReusableCollectionViewCell{
     func configUsers(model: User){
         screenCustomization(model: model)
-        upLeftLabel.text = /*"Name: \(*/model.name ?? "Name"/*)"*/
-        upRightLabel.text = /*"Username: \(*/model.username ?? "Username"/*)"*/
-        downLeftLabel.text = /*"Email: \(*/model.email ?? "Email"/*)"*/
-        downRightLabel.text = /*"Phone: \(*/model.phone ?? "Phone"/*)"*/
+        
+        top_1LeftLabel.text = "Name: "
+        top_1RightLabel.text = model.name ?? "Name"
+        
+        top_2LeftLabel.text = "Username: "
+        top_2RightLabel.text = model.username ?? "Username"
+        
+        bottom_1LeftLabel.text = "Email: "
+        bottom_1RightLabel.text = model.email ?? "Email"
+        
+        bottom_2LeftLabel.text = "Phone: "
+        bottom_2RightLabel.text = model.phone ?? "Phone"
     }
     
     func configUserPosts(model: UserPost){
         screenCustomization(model: model)
-        upLeftLabel.text = model.title ?? "Title"
+        
+        top_1LeftLabel.text = "Title: "
+        top_1RightLabel.text = "\(model.title ?? "Title")".capitalizingFirstLetter()
     }
     
     func configUserComments(model: UserComment){
         screenCustomization(model: model)
-        upLeftLabel.text = "Name: \(model.name ?? "Name")\n\nEmail: \(model.email ?? "Email")"
-        downLeftLabel.text = model.body ?? "Body"
+        
+        top_1LeftLabel.text = "Name: "
+        top_1RightLabel.text = "\(model.name ?? "Name")".capitalizingFirstLetter()
+        
+        //top_2LeftLabel.text = "Email: "
+        //top_2RightLabel.text = model.email ?? "Email"
+        
+        bottom_1LeftLabel.text = ""
+        bottom_1RightLabel.text = "\(model.body ?? "Body")".capitalizingFirstLetter()
     }
     
     func screenCustomization<T: Decodable>(model: T){
         switch model {
         case is User:
             
-            bottomBackgroundBlur.isHidden = false
+            //Top_1 Container Stack
+            top_1ContainerStack.isHidden = false
             
-            //Up Label Stack
-            upLabelStack.isHidden = false
+            //Top_1 Label
+            top_1LeftLabel.isHidden = false
+            top_1RightLabel.isHidden = false
             
-            //Up Left Label
-            upLeftLabel.isHidden = false
-            upLeftLeadingLabel.isHidden = false
-            upLeftLeadingLabel.text = "Name: "
+            //Top_1 Blur
+            top_1BackgroundBlur.isHidden = false
             
-            //Up Right Label
-            upRightLabel.isHidden = false
-            upRightLeadingLabel.isHidden = false
-            upRightLeadingLabel.text = "Username: "
+            //Top_2 Container Stack
+            top_2ContainerStack.isHidden = false
             
-            //Down Label Stack
-            downLabelStack.isHidden = false
+            //Top_2 Label
+            top_2LeftLabel.isHidden = false
+            top_2RightLabel.isHidden = false
             
-            //Down Left Label
-            downLeftLabel.isHidden = false
-            downLeftLeadingLabel.isHidden = false
-            downLeftLeadingLabel.text = "Email: "
+            //Top_2 Blur
+            top_2BackgroundBlur.isHidden = false
             
-            //Down Right Label
-            downRightLabel.isHidden = false
-            downRightLeadingLabel.isHidden = false
-            downLeftLeadingLabel.text = "Phone: "
+            //Bottom_1 Container Stack
+            bottom_1ContainerStack.isHidden = false
+            
+            //Bottom_1 Label
+            bottom_1LeftLabel.isHidden = false
+            bottom_1RightLabel.isHidden = false
+            
+            //Bottom_1 Blur
+            bottom_1BackgroundBlur.isHidden = false
+            
+            //Bottom_2 Container Stack
+            bottom_2ContainerStack.isHidden = false
+            
+            //Bottom_2 Label
+            bottom_2LeftLabel.isHidden = false
+            bottom_2RightLabel.isHidden = false
+            
+            //Bottom_2 Blur
+            bottom_2BackgroundBlur.isHidden = false
             
         case is UserPost:
             
-            bottomBackgroundBlur.isHidden = true
+            //Top_1 Container Stack
+            top_1ContainerStack.isHidden = false
             
-            //Up Label Stack
-            upLabelStack.isHidden = false
+            //Top_1 Label
+            top_1LeftLabel.isHidden = false
+            top_1RightLabel.isHidden = false
             
-            //Up Left Label
-            upLeftLabel.isHidden = false
-            upLeftLeadingLabel.isHidden = false
-            upLeftLeadingLabel.text = "Title: "
+            //Top_1 Blur
+            top_1BackgroundBlur.isHidden = false
             
-            //Up Right Label
-            upRightLabel.isHidden = true
-            upRightLeadingLabel.isHidden = true
+            //Top_2 Container Stack
+            top_2ContainerStack.isHidden = true
             
-            //Down Label Stack
-            downLabelStack.isHidden = true
-
+            //Top_2 Label
+            top_2LeftLabel.isHidden = true
+            top_2RightLabel.isHidden = true
+            
+            //Top_2 Blur
+            top_2BackgroundBlur.isHidden = true
+            
+            //Bottom_1 Container Stack
+            bottom_1ContainerStack.isHidden = true
+            
+            //Bottom_1 Label
+            bottom_1LeftLabel.isHidden = true
+            bottom_1RightLabel.isHidden = true
+            
+            //Bottom_1 Blur
+            bottom_1BackgroundBlur.isHidden = true
+            
+            //Bottom_2 Container Stack
+            bottom_2ContainerStack.isHidden = true
+            
+            //Bottom_2 Label
+            bottom_2LeftLabel.isHidden = true
+            bottom_2RightLabel.isHidden = true
+            
+            //Bottom_2 Blur
+            bottom_2BackgroundBlur.isHidden = true
+            
         case is UserComment:
+                        
+            //Top_1 Container Stack
+            top_1ContainerStack.isHidden = false
             
-            bottomBackgroundBlur.isHidden = false
+            //Top_1 Label
+            top_1LeftLabel.isHidden = true
+            top_1RightLabel.isHidden = false
+            top_1RightLabel.textAlignment = .center
+            top_1RightLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
             
-            //Up Label Stack
-            upLabelStack.isHidden = false
+            //Top_1 Blur
+            top_1BackgroundBlur.isHidden = false
             
-            //Up Left Label
-            upLeftLabel.isHidden = false
-            upLeftLeadingLabel.isHidden = true
-            //upLeftLeadingLabel.text = "Comment: "
+            //Top_2 Container Stack
+            top_2ContainerStack.isHidden = true
             
-            //Up Right Label
-            upRightLabel.isHidden = true
-            upRightLeadingLabel.isHidden = true
-            upRightLeadingLabel.text = "Email: "
+            //Top_2 Label
+            top_2LeftLabel.isHidden = true
+            top_2RightLabel.isHidden = true
             
-            //Down Label Stack
-            downLabelStack.isHidden = false
+            //Top_2 Blur
+            top_2BackgroundBlur.isHidden = true
             
-            downRightLabelsStack.isHidden = true
+            //Bottom_1 Container Stack
+            bottom_1ContainerStack.isHidden = false
             
-            //Down Left Label
-            downLeftLabel.isHidden = false
-            downLeftLeadingLabel.isHidden = true
+            //Bottom_1 Label
+            bottom_1LeftLabel.isHidden = true
+            bottom_1RightLabel.isHidden = false
+            bottom_1RightLabel.textAlignment = .center
             
-            //Down Right Label
-            downRightLabel.isHidden = true
-            downRightLeadingLabel.isHidden = true
-
+            //Bottom_1 Blur
+            bottom_1BackgroundBlur.isHidden = false
+            
+            //Bottom_2 Container Stack
+            bottom_2ContainerStack.isHidden = true
+            
+            //Bottom_2 Label
+            bottom_2LeftLabel.isHidden = true
+            bottom_2RightLabel.isHidden = true
+            
+            //Bottom_2 Blur
+            bottom_2BackgroundBlur.isHidden = true
+            
         default:
             print("No Screen")
         }
     }
 }
+
