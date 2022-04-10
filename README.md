@@ -6,6 +6,7 @@
 - Seperated Network Layer
 - External SPM Packages
 - Reusable Design
+- API Source: https://jsonplaceholder.typicode.com
 
 <h2 align="center">Users Screen</h2>
 <p align="center">
