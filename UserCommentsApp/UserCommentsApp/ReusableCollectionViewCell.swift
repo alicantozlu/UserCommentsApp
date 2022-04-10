@@ -12,6 +12,8 @@ import SwiftHelpers
 class ReusableCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var containerView: UIView!
+    @IBOutlet var blurStackContainer: UIStackView!
+    @IBOutlet var topStackContainer: UIStackView!
     
     @IBOutlet var top_1BackgroundBlur: UIVisualEffectView!
     @IBOutlet var top_2BackgroundBlur: UIVisualEffectView!
@@ -170,6 +172,9 @@ extension ReusableCollectionViewCell{
             
         case is UserComment:
                         
+            topStackContainer.distribution = .fillProportionally
+            topStackContainer.spacing = 10
+            
             //Top_1 Container Stack
             top_1ContainerStack.isHidden = false
             
@@ -201,7 +206,7 @@ extension ReusableCollectionViewCell{
             bottom_1RightLabel.textAlignment = .center
             
             //Bottom_1 Blur
-            bottom_1BackgroundBlur.isHidden = false
+            bottom_1BackgroundBlur.isHidden = true
             
             //Bottom_2 Container Stack
             bottom_2ContainerStack.isHidden = true

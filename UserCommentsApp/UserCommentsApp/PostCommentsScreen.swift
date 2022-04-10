@@ -35,6 +35,10 @@ class PostCommentsScreen: UIViewController {
         commentCollectionView.register(cellType: ReusableCollectionViewCell.self)
         postCommentsScreenVM.fetchData()
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
 }
 
 extension PostCommentsScreen{
@@ -45,7 +49,7 @@ extension PostCommentsScreen{
 
 extension PostCommentsScreen: postCommentsScreenViewModelDelegate, LoadingShowable{
     func showLoadingView() {
-        //showLoading()
+        showLoading()
     }
     
     func hideLoadingView() {
@@ -77,3 +81,40 @@ extension PostCommentsScreen: UICollectionViewDelegateFlowLayout{
         return CGSize(width: view.frame.width, height: view.frame.height/3)
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

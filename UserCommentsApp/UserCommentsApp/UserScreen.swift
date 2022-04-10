@@ -12,7 +12,6 @@ import SwiftHelpers
 class UserScreen: UIViewController {
     
     @IBOutlet var userCollectionView: UICollectionView!
-    @IBOutlet var backButton: UIButton!
     
     var userScreenVM: UserScreenViewModelProtocol!{
         didSet{
@@ -25,22 +24,18 @@ class UserScreen: UIViewController {
         
         userCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: view.frame.height/4, right: 0)
         
-        backButton.isHidden = true
-        
         userCollectionView.register(cellType: ReusableCollectionViewCell.self)
         userScreenVM.fetchData()
     }
-}
-
-extension UserScreen{
-    @IBAction func backButtonAction(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
     }
 }
 
 extension UserScreen: UserScreenViewModelDelegate, LoadingShowable{
     func showLoadingView() {
-        //showLoading()
+        showLoading()
     }
     
     func hideLoadingView() {
@@ -70,6 +65,7 @@ extension UserScreen: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         UserPostsScreen.userId = userScreenVM.getDataIndex(index: indexPath.row)?.id ?? 0
+        UserPostsScreen.titleText = userScreenVM.getDataIndex(index: indexPath.row)?.name ?? ""
         
         let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userPostsScreenIdentifier") as! UserPostsScreen
         VC.modalPresentationStyle = .fullScreen

@@ -26,4 +26,8 @@ class SplashScreen: UIViewController {
         
         }
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
 }

@@ -10,6 +10,7 @@ import SwiftHelpers
 
 class UserPostsScreen: UIViewController {
     
+    @IBOutlet var titleLabel: UILabel!
     @IBOutlet var postCollectionView: UICollectionView!
     
     @IBOutlet var backButtonContainerView: UIView!
@@ -23,9 +24,12 @@ class UserPostsScreen: UIViewController {
     }
     
     static var userId: Int = 0
+    static var titleText: String = "Posts"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleLabel.text = "\(splitName(UserPostsScreen.titleText))'s Posts"
         
         postCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: view.frame.height/8, right: 0)
         
@@ -37,6 +41,26 @@ class UserPostsScreen: UIViewController {
         postCollectionView.register(cellType: ReusableCollectionViewCell.self)
         userPostsScreenVM.fetchData()
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
+    func splitName(_ text:String) -> String{
+        var name = ""
+        let textArray = Array(text)
+        for i in 0...textArray.count-1{
+            if(i>0 && textArray[i-1] == "."){
+                name += " "
+                continue
+            }
+            else if(textArray[i] == " "){
+                break
+            }
+            name += String(textArray[i])
+        }
+        return name
+    }
 }
 
 extension UserPostsScreen{
@@ -47,7 +71,7 @@ extension UserPostsScreen{
 
 extension UserPostsScreen: UserPostsScreenViewModelDelegate, LoadingShowable{
     func showLoadingView() {
-        //showLoading()
+        showLoading()
     }
     
     func hideLoadingView() {
@@ -86,7 +110,7 @@ extension UserPostsScreen: UICollectionViewDelegate{
         PostDetailScreen.bodyText = userPostsScreenVM.getDataIndex(index: indexPath.row)?.body ?? "Post Body"
         
         self.present(postDetailScreenVC, animated: true, completion: {print("PostDetailsScreen Açıldı")})
-
+        
     }
 }
 

@@ -79,4 +79,8 @@ class PostDetailScreen: UIViewController {
             print("Tapped inside the view")
         }
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
 }
