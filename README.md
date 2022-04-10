@@ -1,6 +1,7 @@
 <h1 align="center">User Comments App</h1>
 
 <h3>Features</h3>
+
 - MVVM Design Pattern
 - Seperated Network Layer
 - External SPM Packages
