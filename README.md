@@ -1,5 +1,11 @@
 <h1 align="center">User Comments App</h1>
 
+#Features
+- MVVM Design Pattern
+- Seperated Network Layer
+- External SPM Packages
+- Reusable Design
+
 <h2>Users Screen</h2>
 <p align="center">
 <img align="center" src="https://github.com/alicantozlu/UserCommentsApp/blob/main/UsersScreen.gif" width="250" height="500" />
