@@ -22,7 +22,6 @@ protocol UserScreenViewModelDelegate: AnyObject{
     func reloadData()
 }
 
-
 final class UserScreenViewModel{
     private var userListData = [User]()
     
@@ -35,35 +34,20 @@ final class UserScreenViewModel{
     }
 }
 
-
-
-
-
 extension UserScreenViewModel: UserScreenViewModelProtocol{
     var numberOfItems: Int {
         return userListData.count
     }
-    
     /*func setCellSize() -> (width: Double, height: Double) {
         
     }*/
-    
     func fetchData() {
         fetchUserList()
     }
-    
     func getDataIndex(index: Int) -> User? {
         userListData[index]
     }
 }
-
-
-
-
-
-
-
-
 
 extension UserScreenViewModel{
     fileprivate func fetchUserList(){

@@ -52,7 +52,7 @@ extension PostCommentsScreenViewModel{
         
         self.delegate?.showLoadingView()
         
-        UserDataService.service.fetchUserData(url: "https://jsonplaceholder.typicode.com/comments") {
+        UserDataService.service.fetchUserData(url: "https://jsonplaceholder.typicode.com/posts/\(PostDetailScreen.postId)/comments") {
             [weak self] (response: Result<[UserComment], Error>) -> Void in
             guard let self = self else { return }
             

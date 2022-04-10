@@ -22,6 +22,8 @@ class UserPostsScreen: UIViewController {
         }
     }
     
+    static var userId: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -73,6 +75,8 @@ extension UserPostsScreen: UICollectionViewDataSource{
 
 extension UserPostsScreen: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        PostDetailScreen.postId = userPostsScreenVM.getDataIndex(index: indexPath.row)?.id ?? 0
         
         let postDetailScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "postDetailScreenIdentifier") as! PostDetailScreen
         postDetailScreenVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext

@@ -52,7 +52,7 @@ extension UserPostsScreenViewModel{
 
         self.delegate?.showLoadingView()
 
-        UserDataService.service.fetchUserData(url: "https://jsonplaceholder.typicode.com/posts") {
+        UserDataService.service.fetchUserData(url: "https://jsonplaceholder.typicode.com/users/\(UserPostsScreen.userId)/posts") {
             [weak self] (response: Result<[UserPost], Error>) -> Void in
             guard let self = self else { return }
 

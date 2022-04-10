@@ -26,6 +26,8 @@ class PostDetailScreen: UIViewController {
     static var bodyText: String?
     @IBOutlet var readCommentsButton: UIButton!
     
+    static var postId: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

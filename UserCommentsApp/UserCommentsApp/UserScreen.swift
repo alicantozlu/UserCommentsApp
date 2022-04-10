@@ -68,7 +68,8 @@ extension UserScreen: UICollectionViewDataSource{
 
 extension UserScreen: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        /*SwiftHelper.helper.screenPresenter(self, "userPostsScreenIdentifier", .fullScreen, .flipHorizontal, "UserPostsScreen'e Geçildi")*/
+        
+        UserPostsScreen.userId = userScreenVM.getDataIndex(index: indexPath.row)?.id ?? 0
         
         let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userPostsScreenIdentifier") as! UserPostsScreen
         VC.modalPresentationStyle = .fullScreen
